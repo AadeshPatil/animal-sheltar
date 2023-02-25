@@ -1,0 +1,22 @@
+/* Overlay */
+#update-pet-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Center modal content */
+  #update-pet-modal > div {
+    max-height: 90vh;
+    max-width: 80vw;
+  }
+  
+  /* Close button */
+  #close-update-pet-modal {
+    border-color: transparent;
+  }
+  #close-update-pet-modal:hover {
+    border-color: transparent;
+  }
+  #close-update-pet-modal:focus {
+    border-color: transparent;
+  }
+  

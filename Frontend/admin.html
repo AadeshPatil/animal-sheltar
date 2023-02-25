@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin-login</title>
+</head>
+
+<body>
+    <script>
+        // Prompt user to enter username and password
+
+        let username = prompt("Enter Your username");
+        let password = prompt("Enter Your password");
+        const userObj = {
+            "username": username,
+            "password": password
+        }
+        fetch('http://localhost:8080/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+           body: JSON.stringify(userObj)
+        })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "admin-page.html";
+                    localStorage.setItem("admin","yes")
+                } else {
+                    alert("Incorrect username or password. Please try again.");
+                    window.location.href = "index.html";
+                }
+            })
+            .catch(error => {
+                console.error('Login error:', error);
+            });
+    </script>
+</body>
+
+</html>
